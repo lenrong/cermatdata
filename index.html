@@ -75,11 +75,10 @@
             100% { transform: rotate(360deg); }
         }
         .home-button, .download-excel, .laporan-lengkap {
-            display: block;
+            display: inline-block; /* Membuat tombol berjejer ke samping */
             width: fit-content;
-            margin: 20px auto;
+            margin: 10px; /* Jarak antar tombol */
             padding: 12px 24px;
-            background-color: #007BFF;
             color: white;
             text-decoration: none;
             font-size: 16px;
@@ -87,8 +86,27 @@
             text-align: center;
             transition: background-color 0.3s ease;
         }
-        .home-button:hover, .download-excel:hover, .laporan-lengkap:hover {
-            background-color: #0056b3;
+        .home-button {
+            background-color: #007BFF; /* Warna biru untuk tombol Home */
+        }
+        .download-excel {
+            background-color: #28a745; /* Warna hijau untuk tombol Download Excel */
+        }
+        .laporan-lengkap {
+            background-color: #007BFF; /* Warna biru untuk tombol Laporan Lengkap */
+        }
+        .home-button:hover {
+            background-color: #0056b3; /* Efek hover untuk tombol Home */
+        }
+        .download-excel:hover {
+            background-color: #218838; /* Efek hover untuk tombol Download Excel */
+        }
+        .laporan-lengkap:hover {
+            background-color: #0056b3; /* Efek hover untuk tombol Laporan Lengkap */
+        }
+        .button-container {
+            text-align: center; /* Membuat tombol berada di tengah */
+            margin: 20px 0; /* Jarak dari elemen di atas dan bawah */
         }
     </style>
 </head>
@@ -97,14 +115,15 @@
         <div class="spinner"></div>
     </div>
     <h2>Database Belanja di Cermat-Cloud</h2>
-    <a href="https://sites.google.com/view/cermat-cloud" class="home-button">Home - Cermat Cloud</a>
+    <div class="button-container">
+        <a href="https://sites.google.com/view/cermat-cloud" class="home-button">Home - Cermat Cloud</a>
+        <button id="download-excel" class="download-excel">Download Excel</button>
+        <a href="https://lookerstudio.google.com/reporting/15d5f450-08ab-4917-8fae-ea217ca518b1" class="laporan-lengkap">Laporan Lengkap</a>
+    </div>
     <label for="filterSKPD">Pilih SKPD:</label>
     <select id="filterSKPD">
         <option value="">Semua</option>
     </select>
-    <button id="download-excel" class="download-excel">Download Excel</button>
-    <!-- Tombol Laporan Lengkap -->
-    <a href="https://lookerstudio.google.com/reporting/15d5f450-08ab-4917-8fae-ea217ca518b1" class="laporan-lengkap">Laporan Lengkap</a>
     <table>
         <thead id="tableHeader"></thead>
         <tbody id="dataBody"></tbody>
